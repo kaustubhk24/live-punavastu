@@ -72,22 +72,28 @@
 </div>
 <!--loader end-->
 
+
 <!--body content wrap start-->
 <div class="main">
 
     <!--hero section start-->
     <section class="hero-section ptb-100 gradient-overlay full-screen"
-             style="background: url('img/slider-img-2.jpg')no-repeat center center / cover">
+             style="background: url('img/slider-img-5.jpg')no-repeat center center / cover">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-9 col-lg-7">
-                    <div class="error-content text-center text-white">
-                        <div class="notfound-404"><h1 class="text-white">404</h1></div>
-                        <h2 class="text-white">Sorry, something went wrong</h2>
-                        <p class="lead">The page you are looking for might have been removed had its name changed or is temporarily
-                            unavailable.</p><a class="btn outline-white-btn" href="index.html">Go to Homepage</a></div>
+                    <div class="hero-content-left text-white text-center">
+                        <h1 class="text-white">Thank You !</h1>
+
+                        <p id="thanks-msg" class="lead">Please wait....</p>
+
+                        <div class="mb-5">
+                            <h5 class="mb-0 text-white"> <span class="ti-mobile mr-2 align-items-center"></span> <a style="color: white;" href="tel:+91 80076 98002">+91 80076 98002</a></h5>
+                        </div>
+                    </div>
                 </div>
             </div>
+         
         </div>
     </section>
     <!--hero section end-->
@@ -95,11 +101,27 @@
 </div>
 <!--body content wrap end-->
 
+
 <!--bottom to top button start-->
 <button class="scroll-top scroll-to-target" data-target="html">
     <span class="ti-angle-up"></span>
 </button>
 <!--bottom to top button end-->
+<script>
+    var params = {};
+
+if (location.search) {
+    var parts = location.search.substring(1).split('&');
+
+    for (var i = 0; i < parts.length; i++) {
+        var nv = parts[i].split('=');
+        if (!nv[0]) continue;
+        params[nv[0]] = nv[1] || true;
+    }
+}
+var msg = params.msg;
+document.getElementById("thanks-msg").innerHTML=decodeURIComponent(msg);
+</script>
 
 <!--jQuery-->
 <script src="js/jquery-3.4.1.min.js"></script>
